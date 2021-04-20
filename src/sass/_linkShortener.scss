@@ -1,0 +1,40 @@
+.link-shortener {
+  @include container-mg;
+
+  &__form {
+    position: relative;
+    background-color: $darkViolet;
+    background-image: url(/images/bg-boost-desktop.svg);
+    border-radius: 10px;
+    @include container;
+
+    input {
+      width: 100%;
+      margin-bottom: 0.9em;
+      padding: 0.9em;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7em;
+      border-radius: 5px;
+    }
+
+    @include breakpoint-up(53.625em) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      input {
+        width: 75%;
+        margin-bottom: 0;
+        padding: 1.1em;
+      }
+
+      button {
+        width: 22%;
+        padding: 0.9em;
+      }
+    }
+  }
+}

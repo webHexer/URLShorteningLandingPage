@@ -1,0 +1,91 @@
+.footer {
+  background-color: $veryDarkViolet;
+  text-align: center;
+  @include container;
+
+  @include breakpoint-up(43.75em) {
+    display: grid;
+    grid-template-columns: [footer-start] minmax(4em, 2fr) [features] 1fr [resources] 1fr [company] 1fr [social] 2fr [footer-end];
+    gap: 1.5em;
+    text-align: left;
+    padding-top: 4em;
+    padding-bottom: 4em;
+
+    &__logo {
+      grid-row: 1;
+      grid-column: footer / features;
+    }
+
+    &__features {
+      grid-row: 1;
+      grid-column: features / resources;
+    }
+
+    &__resources {
+      grid-row: 1;
+      grid-column: resources / company;
+    }
+
+    &__company {
+      grid-row: 1;
+      grid-column: company / social;
+    }
+
+    &__social {
+      grid-row: 1;
+      grid-column: social / footer;
+    }
+  }
+
+  &__title {
+    padding: 1.5em 0;
+    color: $white;
+
+    @include breakpoint-up(43.75em) {
+      margin-top: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 1em;
+    font-weight: 500;
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      color: $cyan;
+    }
+
+    @include breakpoint-up(43.75em) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+
+    @include breakpoint-up(43.75em) {
+      justify-content: flex-end;
+      padding: 0;
+    }
+
+    &__link {
+      svg path {
+        transition: fill 150ms ease-in-out;
+      }
+
+      &:hover svg path,
+      &:focus svg path {
+        fill: $cyan;
+      }
+
+      &:not(:last-child) {
+        margin-right: 2em;
+      }
+    }
+  }
+}

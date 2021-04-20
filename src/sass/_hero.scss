@@ -1,0 +1,34 @@
+.hero {
+  overflow-x: hidden;
+
+  &__image {
+    img {
+      max-width: 139%;
+      padding-left: 2.1875em;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    @include container;
+  }
+
+  @include breakpoint-up(40.625em) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+
+    &__content {
+      grid-row: 1;
+      grid-column: 1 / span 1;
+      text-align: left;
+      padding-right: 0;
+    }
+
+    &__image {
+      grid-row: 1;
+      grid-column: 2 / span 2;
+    }
+  }
+}

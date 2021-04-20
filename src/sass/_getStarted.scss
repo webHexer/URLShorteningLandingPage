@@ -1,0 +1,23 @@
+.get-started {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 18em;
+  color: $white;
+  background-color: $darkViolet;
+  background-image: url(/images/bg-boost-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  @include breakpoint-up(43.75em) {
+    height: 13em;
+    background-image: url(/images/bg-boost-desktop.svg);
+  }
+
+  h2 {
+    color: $white;
+  }
+}

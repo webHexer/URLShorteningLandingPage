@@ -1,0 +1,118 @@
+.header {
+  nav {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white;
+    @include container;
+  }
+
+  //mobile menu
+
+  &.open {
+    .header__hamburger {
+      span {
+        &:first-child {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__hamburger {
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $grayishViolet;
+      transform-origin: 3px 1px;
+      transition: all 250ms ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(1, 1, 1, 0.5);
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    text-align: center;
+    background-color: $darkViolet;
+    border-radius: 0.9em;
+    @include container;
+    @include container-mg;
+
+    a {
+      display: block;
+      color: $white;
+      margin-bottom: 2.2em;
+      line-height: 1.4;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:nth-child(3) {
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 0.9px;
+          background-color: $grayishViolet;
+          margin-top: 2.2em;
+        }
+      }
+
+      &.btn {
+        width: 100%;
+      }
+    }
+  }
+
+  //desktop Design
+
+  &__links__left {
+    @include breakpoint-up(43em) {
+      margin-left: 3em;
+
+      a {
+        &:not(:first-child) {
+          margin-left: 1.3em;
+        }
+      }
+    }
+  }
+
+  &__links__right {
+    @include breakpoint-up(43em) {
+      margin-left: auto;
+
+      a {
+        margin-right: 1.3em;
+      }
+    }
+  }
+}
